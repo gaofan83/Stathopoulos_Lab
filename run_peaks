@@ -1,5 +1,3 @@
-samtools merge -f opa_nc14b.bam 20407.rmdup.nochrM.bam 20408.rmdup.nochrM.bam
-samtools merge -f wce_nc14b.bam 20405.rmdup.nochrM.bam 20406.rmdup.nochrM.bam
 
 samtools index opa_nc14b.bam
 samtools index wce_nc14b.bam
@@ -15,8 +13,6 @@ bamCoverage -b wce_nc14b.bam -o wce_nc14b.bw --binSize 10 --normalizeUsing RPKM 
 awk '{if($1~"^chr") print $1"\t"$2"\t"$3}' opa_wce_nc14b_q1E-5_peaks_final.narrowpeak > opa_nc14b_peaks_q1E-5_final.bed
 
 
-samtools merge -f opa_nc15.bam 20403.rmdup.nochrM.bam 20404.rmdup.nochrM.bam
-samtools merge -f wce_nc15.bam 20401.rmdup.nochrM.bam 20402.rmdup.nochrM.bam
 
 samtools index opa_nc15.bam
 samtools index wce_nc15.bam
