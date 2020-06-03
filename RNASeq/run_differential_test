@@ -1,0 +1,2 @@
+cuffdiff --use-sample-sheet --library-norm-method geometric -o ./cuffdiff_all -p 16 \
+        /home/fgao/reference_genome/Drosophila_melanogaster/UCSC/dm6/Annotation/Archives/archive-2015-07-24-09-25-49/Genes/genes.gtf sample_sheet.txt
