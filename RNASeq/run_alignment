@@ -1,0 +1,11 @@
+#!/bin/bash
+export PATH=/home/fgao/software/bowtie2-2.3.4.2-linux-x86_64:$PATH
+export PATH=/home/fgao/software/bowtie-1.2.2-linux-x86_64:$PATH
+export PATH=/home/fgao/software/tophat-2.0.12.Linux_x86_64:$PATH
+export PATH=/home/fgao/software/samtools-0.1.19:$PATH
+
+while read line;
+do
+tophat -o ./tophat_${line} -p 16 --no-coverage-search -G /home/fgao/reference_genome/Drosophila_melanogaster/UCSC/dm6/Annotation/Archives/archive-2015-07-24-09-25-49/Genes/genes.gtf \
+        /home/fgao/reference_genome/Drosophila_melanogaster/UCSC/dm6/Sequence/Bowtie2Index/genome ${line}_R1_001_trim.fastq.gz ${line}_R2_001_trim.fastq.gz &
+done < sample_ID.txt
