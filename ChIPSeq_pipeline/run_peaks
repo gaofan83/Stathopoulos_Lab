@@ -1,0 +1,27 @@
+samtools index opa_nc14b.bam
+samtools index wce_nc14b.bam
+
+bamCoverage -b opa_nc14b.bam -o opa_nc14b.bw --binSize 10 --normalizeUsing RPKM -p 64
+bamCoverage -b wce_nc14b.bam -o wce_nc14b.bw --binSize 10 --normalizeUsing RPKM -p 64
+
+/home/fgao/tools/bigWigToBedGraph opa_nc14b.bw opa_nc14b.bedgraph
+/home/fgao/tools/bigWigToBedGraph wce_nc14b.bw wce_nc14b.bedgraph
+/home/fgao/anaconda2/bin/macs2 bdgcmp -t opa_nc14b.bedgraph -c wce_nc14b.bedgraph -m qpois -o opa_wce_nc14b_q.bedgraph
+
+/home/fgao/anaconda2/bin/macs2 bdgpeakcall -i opa_wce_nc14b_q.bedgraph -c 5 -l 245 -g 100 -o opa_wce_nc14b_q1E-5_peaks_final.narrowpeak
+awk '{if($1~"^chr") print $1"\t"$2"\t"$3}' opa_wce_nc14b_q1E-5_peaks_final.narrowpeak > opa_nc14b_peaks_q1E-5_final.bed
+
+
+
+samtools index opa_nc15.bam
+samtools index wce_nc15.bam
+
+bamCoverage -b opa_nc15.bam -o opa_nc15.bw --binSize 10 --normalizeUsing RPKM -p 64
+bamCoverage -b wce_nc15.bam -o wce_nc15.bw --binSize 10 --normalizeUsing RPKM -p 64
+
+/home/fgao/tools/bigWigToBedGraph opa_nc15.bw opa_nc15.bedgraph
+/home/fgao/tools/bigWigToBedGraph wce_nc15.bw wce_nc15.bedgraph
+/home/fgao/anaconda2/bin/macs2 bdgcmp -t opa_nc15.bedgraph -c wce_nc15.bedgraph -m qpois -o opa_wce_nc15_q.bedgraph
+
+/home/fgao/anaconda2/bin/macs2 bdgpeakcall -i opa_wce_nc15_q.bedgraph -c 5 -l 245 -g 100 -o opa_wce_nc15_q1E-5_peaks_final.narrowpeak
+awk '{if($1~"^chr") print $1"\t"$2"\t"$3}' opa_wce_nc15_q1E-5_peaks_final.narrowpeak > opa_nc15_peaks_q1E-5_final.bed
