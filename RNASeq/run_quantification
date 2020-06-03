@@ -1,0 +1,4 @@
+while read line;
+do
+cuffquant -o ./cuffquant_$line -p 8 /home/fgao/reference_genome/Drosophila_melanogaster/UCSC/dm6/Annotation/Archives/archive-2015-07-24-09-25-49/Genes/genes.gtf tophat_$line/accepted_hits.bam
+done < sample_ID.txt
