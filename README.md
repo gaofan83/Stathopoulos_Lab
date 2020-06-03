@@ -1,2 +1,2 @@
 # Stathopoulos_Lab
-Opa ChIP-Seq data processing pipeline (alignment and peak calling).
+Opa manuscript ChIP-Seq, ATAC-Seq, and RNA-Seq data processing pipelines.
