@@ -9,10 +9,10 @@ fastqc R1.fastq -o FastQCk6R1 -k 6 && fastqc R2.fastq -o FastQCk6R2 -k 6
 ```
 cutadapt -a CTGTCTCTTATACAC R1.fastq | cutadapt -a CGTATGCCGTCTTCTGCTTG - | cutadapt -g TGCCGTCTTCTGCTTG - | cutadapt \
     -g GGTAACTTTGTGTTT - | cutadapt -g CTTTGTGTTTGA - | cutadapt -a CACTCGTCGGCAGCGTTAGATGTGTATAAG - | cutadapt \
-    -a GAAGAGCACACGTCTGAACTCC - > R1,trim1.fastq && \
+    -a GAAGAGCACACGTCTGAACTCC - > R1.trim1.fastq && \
 cutadapt -a CTGTCTCTTATACAC R2.fastq | cutadapt -a CGTATGCCGTCTTCTGCTTG - | cutadapt -g TGCCGTCTTCTGCTTG - | cutadapt \
     -g GGTAACTTTGTGTTT - | cutadapt -g CTTTGTGTTTGA - | cutadapt -a CACTCGTCGGCAGCGTTAGATGTGTATAAG - | cutadapt \
-    -a GAAGAGCACACGTCTGAACTCC - > R2,trim1.fastq
+    -a GAAGAGCACACGTCTGAACTCC - > R2.trim1.fastq
 ```
 
 ### 3. Use Trimmomatic to trim indexed barcodes
