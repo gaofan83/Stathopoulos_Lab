@@ -16,6 +16,7 @@ cutadapt -a CTGTCTCTTATACAC R2.fastq | cutadapt -a CGTATGCCGTCTTCTGCTTG - | cuta
 ```
 
 ### 3. Use Trimmomatic to trim indexed barcodes
+The adaptor sequence file can be found [here](https://github.com/brianpenghe/Stathopoulos_Lab/blob/master/ATACSeq_pipeline/AllAdaptors.fa)
 
 ```
 trimmomatic-0.33.jar PE -threads 4 R1.trim1.fastq R2.trim1.fastq R1.trim2.fastq R1.trim2.unpaired.fastq \
