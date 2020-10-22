@@ -37,5 +37,5 @@ SamplelS50000mD50s150fL0backgroundstd=$(echo $SamplelS50000mD50s150fL0background
 
 ### 3. normalize ATAC signal
 ```
-awk '{print $1"\t"$2"\t"$3"\t"2^((log($4)/log(2)-'$SamplelS50000mD50s150fL0backgroundmean')/'$SamplelS50000mD50s150fL0backgroundstd')-1}' Sample_nochrM.bamp.count.bg4 > Sample_nochrM.normalized.bg4
+awk '{print $1"\t"$2"\t"$3"\t"2^((log($4)/log(2)-'$SamplelS50000mD50s150fL0backgroundmean')/'$SamplelS50000mD50s150fL0backgroundstd')-1}' Sample_nochrM.count.bg4 > Sample_nochrM.normalized.bg4
 ```
